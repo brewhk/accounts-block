@@ -194,3 +194,58 @@ Get the user objects of users who are blocking the user specified.
 ###### Return Value
 
 * `cursor` *Cursor* - cursor from `Meteor.users` representing the users who are blocking the user specified
+
+## Server-side methods
+
+All methods have been namespaced with `brewhk:accounts-block/`
+
+#### `brewhk:accounts-block/block`
+
+Blocks a user.
+
+###### Arguments
+
+* `blockee*` *String* - The `_id` of the user to be blocked
+
+###### Return Value
+
+* `res` *Object* - Object containing the keys `numberAffected` and `insertedId`
+
+#### `brewhk:accounts-block/unblock`
+
+Unblocks a user.
+
+###### Arguments
+
+* `blockee*` *String* - The `_id` of the user to be blocked
+
+###### Return Value
+
+* `count` *Number* - The number of documents affected. Should be equal to `1`
+
+#### `brewhk:accounts-block/getBlockedUsers`
+
+Get a list of (restricted) user objects of users that current user has blocked.
+
+###### Arguments
+
+None
+
+###### Return Value
+
+* `users` *[Object]* - An array of user objects representing users the currently-logged in user has blocked. The restricted user object contains the following fields (if the fields actually exists in the document):
+  * `username`
+  * `profile.firstName`
+  * `profile.lastName`
+  * `settings.profile.firstName`
+  * `settings.profile.lastName`
+  * `settings.account.firstName`
+  * `settings.account.lastName`
+
+## Server-side publications
+
+All publications have been namespaced with `brewhk:accounts-block/`
+
+#### `brewhk:accounts-block/mappingOfUsersBlocked`
+
+Returns a cursor to the account block mapping for the user. Simply calls `Blocker.getMappingForBlockedUsers` with the currently-logged in user's `id`.

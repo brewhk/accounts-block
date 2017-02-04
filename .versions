@@ -7,7 +7,7 @@ binary-heap@1.0.10
 blaze@2.1.9
 blaze-tools@1.0.10
 boilerplate-generator@1.0.11
-brewhk:accounts-block@0.0.2
+brewhk:accounts-block@0.1.0
 callback-hook@1.0.10
 check@1.2.4
 ddp@1.2.5
