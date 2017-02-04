@@ -1,6 +1,6 @@
 Package.describe({
   name: 'brewhk:accounts-block',
-  version: '0.0.2',
+  version: '0.0.3',
   summary: 'Provide methods to (un)block users, as well as hooks and utility functions.',
   git: 'https://github.com/brewhk/accounts-block.git',
   documentation: 'README.md'

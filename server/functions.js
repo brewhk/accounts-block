@@ -29,10 +29,6 @@ Blocker.unblockUser = function(blockee, blocker) {
     });
 };
 
-//////////////
-// INTERNAL //
-//////////////
-
 Blocker.getMappingOfUsersBlockingAUser = function(userId) {
     return Collection.find({
         blockee: userId,
